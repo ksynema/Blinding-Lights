@@ -537,6 +537,56 @@ body {
 body {
   padding-top: 180px; /* dopasujemy za chwilę */
 }
+	.filters {
+  margin: 20px 40px;
+  display: flex;
+  gap: 10px;
+}
+
+.filters select {
+  appearance: none;
+  padding: 6px 15px;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filters select:hover {
+  background: white;
+  color: #0c0f1f;
+}
+	.table-container {
+  margin: 20px 40px;
+  background: #111322;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #1a1d35;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+th, td {
+  padding: 14px;
+}
+
+tr:hover {
+  background: rgba(255,255,255,0.05);
+}
 
 </style>
 </head>
@@ -985,7 +1035,7 @@ body {
 </div>
 
 
-
+<h2 id="tableTitle" style="margin: 20px 40px;"></h2>
 <!-- 📊 TABELA -->
 <div id="content"></div>
 
@@ -1001,7 +1051,7 @@ const data = {
     { gp: "China", date: "23 Mar", winner: "Piastri", team: "McLaren" },
   ],
   drivers: [
-    { name: "Norris", points: 25 },
+    { name: "Norris", points: 25, img: "https://via.placeholder.com/30" },
     { name: "Piastri", points: 18 },
   ],
   teams: [
@@ -1044,11 +1094,25 @@ function render() {
     current = current.filter(r => r.gp === selectedRace);
   }
 
-  let html = "";
+  // 🧠 TYTUŁ
+  let title = "";
+  if (selectedRace === "all") {
+    title = year + " Results";
+  } else {
+    title = selectedRace + " Grand Prix";
+  }
+  document.getElementById("tableTitle").innerText = title;
+
+  let html = `<div class="table-container"><table>`;
 
   if (activeTab === "races") {
-    html += `<table>
-      <tr><th>Grand Prix</th><th>Date</th><th>Winner</th><th>Team</th></tr>`;
+    html += `<tr>
+      <th>Grand Prix</th>
+      <th>Date</th>
+      <th>Winner</th>
+      <th>Team</th>
+    </tr>`;
+
     current.forEach(r => {
       html += `<tr>
         <td>${r.gp}</td>
@@ -1057,44 +1121,25 @@ function render() {
         <td>${r.team}</td>
       </tr>`;
     });
-    html += `</table>`;
   }
 
   if (activeTab === "drivers") {
-    html += `<table>
-      <tr><th>Driver</th><th>Points</th></tr>`;
+    html += `<tr>
+      <th></th>
+      <th>Driver</th>
+      <th>Points</th>
+    </tr>`;
+
     current.forEach(d => {
       html += `<tr>
+        <td><img src="${d.img}" style="width:30px;border-radius:50%"></td>
         <td>${d.name}</td>
         <td>${d.points}</td>
       </tr>`;
     });
-    html += `</table>`;
   }
 
-  if (activeTab === "teams") {
-    html += `<table>
-      <tr><th>Team</th><th>Points</th></tr>`;
-    current.forEach(t => {
-      html += `<tr>
-        <td>${t.name}</td>
-        <td>${t.points}</td>
-      </tr>`;
-    });
-    html += `</table>`;
-  }
-
-  if (activeTab === "awards") {
-    html += `<table>
-      <tr><th>Award</th><th>Driver</th></tr>`;
-    current.forEach(a => {
-      html += `<tr>
-        <td>${a.name}</td>
-        <td>${a.driver}</td>
-      </tr>`;
-    });
-    html += `</table>`;
-  }
+  html += "</table></div>";
 
   document.getElementById("content").innerHTML = html;
 }
