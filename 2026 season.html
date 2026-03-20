@@ -1209,6 +1209,8 @@ function render() {
         <td>${r.date}</td>
         <td>${r.winner}</td>
         <td>${r.team}</td>
+		<td>${r.laps}</td>
+		<td>${r.time}</td>
       </tr>`;
     });
   }
@@ -1222,11 +1224,14 @@ function render() {
 
     current.forEach(d => {
       html += `<tr>
+	    <td>${d.position}</td>
         <td style="display:flex;align-items:center;gap:10px;">
           <img src="${d.img}" style="width:30px;height:30px;border-radius:50%;">
           ${d.name}
         </td>
-        <td>${d.pts}</td>
+		<td>${d.nationality}</td>
+		<td>${d.team}</td>
+		<td>${d.pts}</td>
       </tr>`;
     });
   }
@@ -1240,6 +1245,7 @@ function render() {
 
     current.forEach(t => {
       html += `<tr>
+	    <td>${t.position}</td>
         <td>${t.name}</td>
         <td>${t.pts}</td>
       </tr>`;
