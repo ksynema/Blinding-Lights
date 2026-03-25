@@ -628,14 +628,13 @@ html, body {
 /* TOR (po prawej, jak na screenie) */
 .track {
   position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0.8;
+  right: 20px;
+  bottom: 20px; /* 🔥 zamiast top:50% */
+  opacity: 0.9;
 }
 
 .track img {
-  width: 60px;
+  width: 90px; /* 🔥 większy rozmiar */
   height: auto;
   object-fit: contain;
 }
@@ -1399,7 +1398,7 @@ html, body {
     </div>
 		   <div class="event-main">
     <div class="flag">
-      <img src="ae.png" alt="Monaco flag">
+      <img src="ae.jpg" alt="Monaco flag">
     </div>
     <h2 class="country">ABU DHABI</h2>
     <p class="race-name">FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2027</p>
