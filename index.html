@@ -119,6 +119,8 @@ h2, p {
   transform: scale(1.05);
 }
 .race-card::after{
+	 pointer-events: none;
+  z-index: 1;
   content: "";
   position: absolute;
   inset: 0;
@@ -309,6 +311,8 @@ h2, p {
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   gap: 25px;
   position: fixed;
+	justify-content: flex-start; /* 🔥 od lewej */
+	  align-items: center;
   top: 120px;
   left: 0;
   width: 100vw;
