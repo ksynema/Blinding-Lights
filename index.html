@@ -155,8 +155,8 @@ h2, p {
   height: 250px;
   object-fit: cover;
 }
-.schedule-footer{
-  margin-top: 20px;
+.schedule-footer {
+  display: contents; /* 🔥 usuwa "opakowanie" – najlepsze rozwiązanie */
 }
 
 .schedule-btn {
@@ -284,7 +284,9 @@ h2, p {
   left: 0;
   width: 100vw;
   flex-wrap: wrap;
-  gap: 10px;
+	justify-content: flex-start; /* 🔥 od lewej */
+	  align-items: center;
+  gap: 10px;            /* odstęp między przyciskami */
   padding: 10px 30px;
   background-color: #0c0f1f;
   box-sizing: border-box;
