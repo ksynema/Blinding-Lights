@@ -67,7 +67,8 @@ a {
   border-radius: 6px;
 }
 
-a:hover {
+.navbar a:hover,
+.menu-bar a:hover {
   background: rgba(255,255,255,0.1);
 }
 
@@ -211,8 +212,9 @@ h2, p {
   margin: 0 auto;
 }
 .news-card {
-  display: flex;
+   display: flex;
   flex-direction: column;
+  height: 100%; /* 🔥 klucz */
   background: #0b0b0d;
   border-radius: 12px;
   overflow: hidden;
@@ -244,11 +246,14 @@ h2, p {
 }
 .news-content {
   padding: 15px;
+	 flex-grow: 1;
 }
 
 .news-content h3 {
-  font-size: 16px;   /* było za duże */
+  font-size: 16px;
   line-height: 1.3;
+  height: 42px;       /* 🔥 stała wysokość */
+  overflow: hidden;
 }
 
 .news-content span {
@@ -276,17 +281,14 @@ h2, p {
 /* wspólne dla wszystkich dropdownów */
 .dropdown-content {
   display: none;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 120px;
   left: 0;
   width: 100vw;
   background-color: #0c0f1f;
-  flex-wrap: wrap; 
-  gap: 10px;
-  padding: 20px 20px;
-  z-index: 10;
+  padding: 20px 30px;
   box-sizing: border-box;
-  pointer-events: none;
+  z-index: 1000;
 }
 /* Schedule: 3 kolumny */
 .dropdown-content.schedule{
@@ -414,8 +416,7 @@ h2, p {
 }
 .driver-item a{
   display: flex;
-
-  gap: 18px;
+  gap: 10px;
   text-align: right;  /* usuwa centrowanie */
   text-decoration: none;
   color: white;
@@ -433,11 +434,10 @@ h2, p {
   background-color: #1a2a4a;
 }
 .driver-name{
-  
-  text-align: right;  /* usuwa centrowanie */
+    text-align: left;
+  font-size: 12px;
   left: 100px;
   border-radius: 10px;
-  font-size: 10px;
   letter-spacing: 0.5px;
 }
 .driver-item a:hover{
@@ -549,10 +549,7 @@ body {
   padding-top: 140px; /* dopasujemy za chwilę */
   overflow-y: auto;
 }
-.dropdown-content {
-  display: none;
-  pointer-events: none;
-}
+
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -828,7 +825,7 @@ html, body {
 
       <div class="race-card">
 		  <a href="CHINA.html" >
-        <img src="CHINA.html">
+        <img src="CHINA.png">
         <div class="race-info">
           <div class="round">ROUND 2</div>
           <div class="country">China</div>
