@@ -555,6 +555,110 @@ body {
   padding-top: 180px; /* dopasujemy za chwilę */
   overflow-y: auto;
 }
+.dropdown-content {
+  display: none;
+  pointer-events: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  pointer-events: auto;
+}
+  body {
+  background: #0f111a;
+  color: #e6e6e6;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.article {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* 🔥 HERO */
+.article-hero h1 {
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.category {
+  font-size: 12px;
+  background: #2a2d3a;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.lead {
+  font-size: 20px;
+  color: #b0b0b0;
+  max-width: 800px;
+}
+
+/* 🧱 OBRAZKI */
+.image-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 40px 0;
+}
+
+.image-row img,
+.image-full img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* 📄 TEKST */
+.content-block {
+  margin: 30px 0;
+}
+
+.content-block p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* 🔥 SEKCJA */
+.section h2 {
+  font-size: 36px;
+  margin: 40px 0 10px;
+}
+
+.section p {
+  font-size: 18px;
+  color: #cfcfcf;
+}
+
+/* 🔗 LINKI */
+a {
+  color: red;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ✨ HIGHLIGHT */
+.highlight {
+  color: red;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .article-hero h1 {
+    font-size: 32px;
+  }
+
+  .image-row {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 <body>
