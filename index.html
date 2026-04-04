@@ -101,11 +101,17 @@ h2, p {
 .race-card{
   position: relative;
   border-radius: 12px;
-  
+  overflow: hidden; /* 🔥 KLUCZ */
+  z-index: 1;
   cursor: pointer;
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   height: 250px;
 
+}
+	.race-card a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .race-card img{
@@ -115,8 +121,8 @@ h2, p {
   transition: transform 0.3s;
 }
 
-.race-card:hover img{
-  transform: scale(1.05);
+.race-card:hover img {
+  transform: scale(1.02);
 }
 .race-card::after{
 	 pointer-events: none;
@@ -158,11 +164,12 @@ h2, p {
   object-fit: cover;
 }
 .schedule-footer {
-  display: contents; /* 🔥 usuwa "opakowanie" – najlepsze rozwiązanie */
-	  display: flex;
+  display: flex;
   justify-content: flex-start;
   max-width: 1400px;
   margin: 20px auto 0;
+  position: relative;
+  z-index: 20; /* 🔥 nad kartami */
 }
 
 .schedule-btn {
