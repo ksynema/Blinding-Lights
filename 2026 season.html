@@ -552,7 +552,7 @@ h2, p {
   z-index: 9999;
 }
 body {
-  padding-top: 140px; /* dopasujemy za chwilę */
+  padding-top: 180px; /* dopasujemy za chwilę */
   overflow-y: auto;
 }
 
@@ -1486,7 +1486,24 @@ render();
 
     // 🔥 scroll do tabeli
     document.getElementById("content").scrollIntoView({ behavior: "smooth" });
-  
+  table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white; /* 🔥 KLUCZ */
+}
+
+th, td {
+  padding: 14px;
+  color: white; /* 🔥 dla pewności */
+}
+
+th {
+  background: #1a1d35;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: white; /* 🔥 */
+}
 </script>
 
 </body>
