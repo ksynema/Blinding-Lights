@@ -60,10 +60,11 @@ nav.menu-bar ul li a:hover {
 a {
   text-decoration: none;
   color: white;
-  cursor: pointer;
+}
+
+.button-link {
   padding: 5px 8px;
   border-radius: 6px;
-  transition: 0.2s;
 }
 
 a:hover {
@@ -163,6 +164,7 @@ h2, p {
   height: 250px;
   object-fit: cover;
 }
+	
 .schedule-footer {
   display: flex;
   justify-content: flex-start;
@@ -258,7 +260,17 @@ h2, p {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
+@media (max-width: 900px) {
+  .race-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+@media (max-width: 500px) {
+  .race-container {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 /* wspólne dla wszystkich dropdownów */
@@ -475,10 +487,7 @@ h2, p {
   display: flex;
   flex-wrap: wrap;
   }
-body {
-  background: #0d0f1a;
-  color: white;
-}
+
   /* NAVBAR */
 .navbar {
   display: flex;
@@ -782,6 +791,7 @@ html, body {
 .third {
   background: linear-gradient(90deg, #b71c1c, #ff1744);
 }
+	
 </style>
 </head>
 <body>
