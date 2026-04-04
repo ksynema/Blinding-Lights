@@ -306,14 +306,15 @@ h2, p {
 
 /* Results: 2 kolumny */
 .dropdown-content.results {
+	display: flex;
+  flex-wrap: wrap;      /* żeby się zawijały jak zabraknie miejsca */
+  justify-content: flex-start; /* 🔥 od lewej */
+  align-items: center;
+  gap: 10px;            /* odstęp między przyciskami */
   position: fixed;
   top: 120px;
   left: 0;
   width: 100vw;
-  flex-wrap: wrap;
-	justify-content: flex-start; /* 🔥 od lewej */
-	  align-items: center;
-  gap: 10px;            /* odstęp między przyciskami */
   padding: 10px 30px;
   background-color: #0c0f1f;
   box-sizing: border-box;
